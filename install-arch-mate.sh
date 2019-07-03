@@ -1,4 +1,4 @@
-#!/sh/bash
+#!/bin/bash
 set -e
 
 sh 000-use-all-cores-makepkg-conf-v3.sh
