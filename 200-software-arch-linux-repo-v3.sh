@@ -4,15 +4,11 @@ set -e
 # Author	:	Erik Dubois
 ##################################################################################################################
 
-echo "AUR - DESKTOP SPECIFIC APPLICATIONS "
-
-sh AUR-DS/install-mintlocale-v*.sh
-
 echo "Installing category Accessories"
 
+sudo pacman -S --noconfirm --needed cronie
 sudo pacman -S --noconfirm --needed galculator
 sudo pacman -S --noconfirm --needed gnome-screenshot
-#sudo pacman -S --noconfirm --needed xfce4-terminal 
 
 echo "Installing category Development"
 
@@ -24,7 +20,6 @@ echo "Installing category Graphics"
 
 sudo pacman -S --noconfirm --needed gnome-font-viewer
 sudo pacman -S --noconfirm --needed gpick
-#sudo pacman -S --noconfirm --needed ristretto
 
 echo "Installing category Internet"
 
@@ -104,16 +99,13 @@ sudo pacman -S --noconfirm --needed xdotool
 sudo pacman -S --noconfirm --needed libmicrodns
 sudo pacman -S --noconfirm --needed protobuf
 sudo pacman -S --noconfirm --needed zenity
-sudo pacman -S --noconfirm --needed cinnamon-translations 
-sudo pacman -S --noconfirm --needed nemo-fileroller 
 #sudo pacman -S --noconfirm --needed imagemagick
 sudo pacman -S --noconfirm --needed w3m
 sudo pacman -S --noconfirm --needed chrome-gnome-shell
 sudo pacman -S --noconfirm --needed xreader
 sudo pacman -S --noconfirm --needed gvfs-goa 
 sudo pacman -S --noconfirm --needed gvfs-google
-sudo pacman -S --noconfirm --needed gnome-terminal
-sudo pacman -S --noconfirm --needed guake
+#sudo pacman -S --noconfirm --needed tilda
 
 ###############################################################################################
 
