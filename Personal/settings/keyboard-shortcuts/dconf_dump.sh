@@ -1,31 +1,26 @@
 #!/bin/bash
-set -e
+#
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
 # Website	:	https://www.arcolinuxforum.com
 ##################################################################################################################
+
+##################################################################################################################
 #
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
+#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. AT YOUR OWN RISK.
 #
 ##################################################################################################################
 
-sudo pacman -Syyu --noconfirm
+sudo pacman -S dconf dconf-editor --noconfirm --needed
 
-#installing displaymanager or login manager
-sudo pacman -S --noconfirm --needed lightdm
-sh AUR/install-lightdm-slick-greeter-v1.sh
-sh AUR/install-lightdm-settings-v1.sh
+dconf dump /org/cinnamon/desktop/keybindings/ > keyboard-shortcuts-mycinnamon.dconf
 
-#installing desktop environment
-sudo pacman -S  --noconfirm --needed mate mate-extra
+echo "################################################################"
+echo "###################    shortcuts dumped   ######################"
+echo "################################################################"
 
-#enabling displaymanager or login manager
-sudo systemctl enable lightdm.service -f
-sudo systemctl set-default graphical.target
-
+sleep 1

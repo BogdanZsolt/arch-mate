@@ -1,29 +1,27 @@
 #!/bin/bash
-set -e
+#
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
 # Website	:	https://www.arcolinuxforum.com
 ##################################################################################################################
+
+##################################################################################################################
 #
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
+#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. AT YOUR OWN RISK.
 #
 ##################################################################################################################
 
-echo "#############################"
-echo "SPECIALITIES"
-echo "#############################"
-echo "Adding the current user to the group rfkill :"
-echo "In order to be able to switch blueberry on and off"
-# https://github.com/linuxmint/blueberry/issues/75
-sudo usermod  -a -G rfkill $USER
-echo
+sudo pacman -S dconf dconf-editor --noconfirm --needed
+
+dconf load /org/cinnamon/desktop/keybindings/ < keyboard-shortcuts-mycinnamon.dconf
 
 echo "################################################################"
-echo "###################    T H E   E N D      ######################"
+echo "###################    shortcuts loaded   ######################"
 echo "################################################################"
+
+sleep 1
+
